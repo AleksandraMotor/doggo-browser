@@ -1,0 +1,18 @@
+@import "variables";
+
+* {
+    font-size: $base-font-size;
+    font-family: 'Montserrat', sans-serif;
+    color: $primary-color;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}

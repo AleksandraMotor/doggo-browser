@@ -1,0 +1,64 @@
+@import "variables";
+@import "breakpoints";
+
+body {
+    background-color: $bg-color;
+}
+
+.dogo-browser {
+    width: 100%;
+    max-width: 1300px;
+    // max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 15px;
+    margin: 0 auto;
+
+    @include breakpoint-above(sm) {
+        gap: 50px;
+        padding: 30px 15px;
+    }
+
+    @include breakpoint-above(md) {
+        padding: 20px;
+        max-height: 100vh;
+    }
+
+    &__header {
+        padding: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+
+        @include breakpoint-above(sm) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include breakpoint-above(md) {
+            padding: 20px;
+        }
+
+        &__title {
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+
+    &__display {
+        padding: 10px;
+        width: 100%;
+        // box-shadow: 5px 5px 35px -10px $primary-color;
+        border-radius: 25px;
+        background-color: $bg-color-lighten;
+
+
+        @include breakpoint-above(md) {
+            padding: 20px;
+        }
+    }
+}

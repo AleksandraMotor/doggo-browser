@@ -1,0 +1,21 @@
+$breakpoints: (
+    'xs': ( min-width: 480px),
+    'sm': ( min-width: 768px),
+    'md': ( min-width: 992px),
+    'lg': ( min-width: 1200px),
+    'xl': ( min-width: 1400px),
+) !default;
+
+@mixin breakpoint-above($breakpoint) {
+
+    @if map-has-key($breakpoints, $breakpoint) {
+
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    } 
+    
+    @else {
+        @warn "Invalid breakpoint: #{map-keys($breakpoints)}.";
+    }
+}

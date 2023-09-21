@@ -1,0 +1,133 @@
+@import "variables";
+@import "breakpoints";
+
+.current-dog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @include breakpoint-above(md) {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    &__image {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 25px;
+        // background-color: $bg-color-lighten;
+        padding: 15px;
+
+        &:hover {
+            box-shadow: 5px 5px 35px -10px $primary-color;
+        }
+
+        @include breakpoint-above(xs) {
+            width: 400px;
+            height: 400px;
+        }
+
+        @include breakpoint-above(sm) {
+            width: 600px;
+            height: 600px;
+        }
+
+        @include breakpoint-above(lg) {
+            width: 700px;
+            height: 700px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            // object-fit: contain;
+            border-radius: 5px;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        width: 100%;
+        padding: 10px;
+
+        @include breakpoint-above(md) {
+            max-width: 300px;
+        }
+        
+        &__title {
+            text-transform: uppercase;
+            line-height: 30px;
+            margin-bottom: 40px;
+        }
+
+        &__subtitle {
+            display: none;
+            margin-bottom: 15px;
+            line-height: 20px;
+        }
+
+        &__record {
+            display: none;
+            flex-direction: column;
+            max-height: 300px;
+            overflow-y: auto;
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: 20px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px grey; 
+                border-radius: 10px;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: red; 
+                border-radius: 10px;
+            }
+            
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: #b30000; 
+            }
+
+            @include breakpoint-above(xs) {
+                max-height: 400px;
+            }
+    
+            @include breakpoint-above(md) {
+                max-height: 575px;
+            }
+
+            &__button {
+                background-color: $bg-color;
+                border: none;
+                cursor: pointer;
+                padding: 10px;
+                margin: 8px 10px 8px 0px;
+                border: 1px solid $primary-color;
+                border-radius: 25px;
+                text-transform: capitalize;
+                font-weight: 500;
+
+                &:hover {
+                    background-color: $primary-color;
+                    color: $bg-color;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
