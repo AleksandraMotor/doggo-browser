@@ -85,8 +85,13 @@ $paw-white: url('../../public/img/paw-white.png');
             }
     
             @include breakpoint-above(md) {
+                max-height: 465px;
+            }
+
+            @include breakpoint-above(lg) {
                 max-height: 565px;
             }
+
 
             &::-webkit-scrollbar {
                 width: 25px;

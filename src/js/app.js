@@ -8,8 +8,7 @@ class Dogo {
         this.displayButtons = document.querySelector('.current-dog__description__record');
         this.subtitle = document.querySelector('.current-dog__description__subtitle');
         this.showList = document.querySelector('.breeds__selector');
-        this.container = document.querySelector('.breeds__container');
-        this.scrollbox = document.querySelector('.breeds__container__scrollbox');
+        this.scrollbox = document.querySelector('.breeds__scrollbox');
         this.init();
     }
 
@@ -27,7 +26,7 @@ class Dogo {
 
     getRandomImageByBreed(breed) {
         return fetch(`${this.apiUrl}/breed/${breed}/images/random`)
-            .then(resp => resp.json())
+        .then(resp => resp.json())
             .then(data => data.message);
     }
 
@@ -54,7 +53,7 @@ class Dogo {
         }
 
         const listItem = document.createElement('div');
-        listItem.classList.add('breeds__container__scrollbox__item');
+        listItem.classList.add('breeds__scrollbox__item');
 
         listItem.innerText = name;
         
@@ -84,13 +83,13 @@ class Dogo {
 
         this.showList.addEventListener('click', () => {
             this.showList.classList.toggle('breeds__selector--show');
-            this.container.classList.toggle('breeds__container--show');
+            this.scrollbox.classList.toggle('breeds__scrollbox--show');
         })
 
         document.addEventListener('click', (event) => {
             if (event.target.id !== 'show') {
                 this.showList.classList.remove('breeds__selector--show');
-                this.container.classList.remove('breeds__container--show');
+                this.scrollbox.classList.remove('breeds__scrollbox--show');
             }
         })
 
