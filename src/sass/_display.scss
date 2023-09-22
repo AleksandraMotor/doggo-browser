@@ -1,5 +1,7 @@
 @import "variables";
 @import "breakpoints";
+$paw: url('../../public/img/paw.png');
+$paw-white: url('../../public/img/paw-white.png');
 
 .current-dog {
     display: flex;
@@ -22,12 +24,8 @@
         justify-content: center;
         position: relative;
         border-radius: 25px;
-        // background-color: $bg-color-lighten;
         padding: 15px;
-
-        &:hover {
-            box-shadow: 5px 5px 35px -10px $primary-color;
-        }
+        box-shadow: 5px 5px 35px -10px $primary-color;
 
         @include breakpoint-above(xs) {
             width: 400px;
@@ -47,7 +45,6 @@
         img {
             max-width: 100%;
             max-height: 100%;
-            // object-fit: contain;
             border-radius: 5px;
         }
     }
@@ -64,6 +61,8 @@
         }
         
         &__title {
+            font-size: 1.5rem;
+            font-weight: 500;
             text-transform: uppercase;
             line-height: 30px;
             margin-bottom: 40px;
@@ -81,28 +80,6 @@
             max-height: 300px;
             overflow-y: auto;
 
-            /* width */
-            &::-webkit-scrollbar {
-                width: 20px;
-            }
-            
-            /* Track */
-            &::-webkit-scrollbar-track {
-                box-shadow: inset 0 0 5px grey; 
-                border-radius: 10px;
-            }
-            
-            /* Handle */
-            &::-webkit-scrollbar-thumb {
-                background: red; 
-                border-radius: 10px;
-            }
-            
-            /* Handle on hover */
-            &::-webkit-scrollbar-thumb:hover {
-                background: #b30000; 
-            }
-
             @include breakpoint-above(xs) {
                 max-height: 400px;
             }
@@ -110,6 +87,34 @@
             @include breakpoint-above(md) {
                 max-height: 575px;
             }
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: 25px;
+
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px $primary-color; 
+                border-radius: 10px;
+                margin: 10px;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background-image: $paw;
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background-image: $paw-white;
+            }
+
+
 
             &__button {
                 background-color: $bg-color;

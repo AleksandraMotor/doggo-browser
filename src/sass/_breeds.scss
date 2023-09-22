@@ -1,5 +1,7 @@
 @import "variables";
 @import "breakpoints";
+$paw: url('../../public/img/paw.png');
+$paw-white: url('../../public/img/paw-white.png');
 
 .breeds {
     position: relative;
@@ -35,82 +37,55 @@
             background-color: $bg-color;
             border-bottom-left-radius: 25px;
             border-bottom-right-radius: 25px;
-            border: 2px solid $primary-color;
+            border: 1px solid $primary-color;
             border-top: none;
             padding: 10px 0;
             flex-direction: column;
             display: flex;
 
-
-            // position: relative;
-            // z-index: 1;
-            // overflow: auto;
-            // // width: 200px;
-            // // max-height: 200px;
-            // // margin: 50px auto;
-            // background: #ffffff00 no-repeat;
-            // background-image: -webkit-radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), -webkit-radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-            // background-image: -moz-radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), -moz-radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-            // background-image: radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-            // background-position: 0 0, 0 100%;
-            // background-size: 100% 14px;
-
-            // &::before, &::after {
-            //     content: "";
-            //     position: relative;
-            //     z-index: -1;
-            //     display: block;
-            //     height: 30px;
-            //     margin: 0 0 -30px;
-            //     background: -webkit-linear-gradient(top, #FFF, #FFF 30%, rgba(255, 255, 255, 0));
-            //     background: -moz-linear-gradient(top, #FFF, #FFF 30%, rgba(255, 255, 255, 0));
-            //     background: linear-gradient(to bottom, #FFF, #FFF 30%, rgba(255, 255, 255, 0));
-            // }
-
-            // &::after {
-            //     margin: -30px 0 0;
-            //     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), #FFF 70%, #FFF);
-            //     background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), #FFF 70%, #FFF);
-            //     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #FFF 70%, #FFF);
-            // }
-
-//   width: 200px;
-//   max-height: 200px;
-//   margin: 50px auto;
-//   background: /* Shadow covers */
-//   linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */
-//   radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
-//   background: /* Shadow covers */
-//   linear-gradient(white 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), white 70%) 0 100%, /* Shadows */
-//   radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0)) 0 100%;
-//   background-repeat: no-repeat;
-// //   background-color: rgb(255, 255, 255);
-//   background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-//   /* Opera doesn't support this in the shorthand */
-//   background-attachment: local, local, scroll, scroll;
-
-
             /* width */
             &::-webkit-scrollbar {
-                width: 15px;
+                width: 25px;
             }
             
             /* Track */
             &::-webkit-scrollbar-track {
-                box-shadow: inset 0 0 5px grey; 
+                box-shadow: inset 0 0 5px $primary-color; 
                 border-radius: 10px;
                 margin: 10px;
             }
             
             /* Handle */
             &::-webkit-scrollbar-thumb {
-                background: red; 
+                background-image: $paw;
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: 25px;
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px $primary-color; 
                 border-radius: 10px;
+                margin: 10px;
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background-image: $paw;
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
             }
             
             /* Handle on hover */
             &::-webkit-scrollbar-thumb:hover {
-                background: #b30000; 
+                background-image: $paw-white;
             }
 
             &__item {

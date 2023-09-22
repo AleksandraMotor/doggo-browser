@@ -43,16 +43,19 @@ body {
             padding: 20px;
         }
 
-        &__title {
-            text-transform: uppercase;
-            text-align: center;
+        img {
+            width: 100%;
+
+            @include breakpoint-above(sm) {
+                width: 400px;
+            }
         }
     }
 
     &__display {
         padding: 10px;
         width: 100%;
-        // box-shadow: 5px 5px 35px -10px $primary-color;
+        box-shadow: 5px 5px 35px -10px $primary-color;
         border-radius: 25px;
         background-color: $bg-color-lighten;
 
