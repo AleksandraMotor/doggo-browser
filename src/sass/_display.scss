@@ -54,7 +54,6 @@ $paw-white: url('../../public/img/paw-white.png');
         flex-direction: column;
         flex-grow: 1;
         width: 100%;
-        padding: 10px;
 
         @include breakpoint-above(md) {
             max-width: 300px;
@@ -66,6 +65,7 @@ $paw-white: url('../../public/img/paw-white.png');
             text-transform: uppercase;
             line-height: 30px;
             margin-bottom: 40px;
+            height: 60px;
         }
 
         &__subtitle {
@@ -85,23 +85,19 @@ $paw-white: url('../../public/img/paw-white.png');
             }
     
             @include breakpoint-above(md) {
-                max-height: 575px;
+                max-height: 565px;
             }
 
-            /* width */
             &::-webkit-scrollbar {
                 width: 25px;
-
             }
             
-            /* Track */
             &::-webkit-scrollbar-track {
                 box-shadow: inset 0 0 5px $primary-color; 
                 border-radius: 10px;
-                margin: 10px;
+                margin: 8px;
             }
             
-            /* Handle */
             &::-webkit-scrollbar-thumb {
                 background-image: $paw;
                 background-size: contain;
@@ -109,12 +105,9 @@ $paw-white: url('../../public/img/paw-white.png');
                 background-repeat: no-repeat;
             }
 
-            /* Handle on hover */
             &::-webkit-scrollbar-thumb:hover {
                 background-image: $paw-white;
             }
-
-
 
             &__button {
                 background-color: $bg-color;
@@ -125,7 +118,6 @@ $paw-white: url('../../public/img/paw-white.png');
                 border: 1px solid $primary-color;
                 border-radius: 25px;
                 text-transform: capitalize;
-                font-weight: 500;
 
                 &:hover {
                     background-color: $primary-color;
