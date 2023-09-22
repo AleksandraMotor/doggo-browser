@@ -70,7 +70,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
-            title: "nowa aplikacja",
+            title: "Best Doggo Browser",
             template: "src/templates/template.html"
         }),
         new CopyPlugin({

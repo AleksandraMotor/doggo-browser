@@ -1,7 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -9,7 +8,7 @@ module.exports = {
         main: './src/js/app.js',
     },
     output: {
-        filename: 'js/[name]-[contenthash:6].js',
+        filename: '[name].js',
         path: path.resolve(__dirname, '../')
     },
     module: {
@@ -28,7 +27,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name][contenthash:6].[ext]',
+                            name: '[name].[ext]',
                             outputPath: 'img',
                         }
                     },
@@ -60,11 +59,11 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            title: "nowa aplikacja",
+            title: "Best Doggo Browser",
             template: "src/templates/template.html"
         }),
         new MiniCssExtractPlugin({
-            filename: '[name]-[contenthash:6].css'
+            filename: '[name].css'
         })
     ]
 }
