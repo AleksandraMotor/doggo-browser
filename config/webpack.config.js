@@ -63,7 +63,6 @@ module.exports = {
                     }
                 ],
                 dependency: { not: ['url']},
-                
             },
         ]
     },

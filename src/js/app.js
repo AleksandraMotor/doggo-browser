@@ -27,7 +27,7 @@ class Dogo {
     getRandomImageByBreed(breed) {
         return fetch(`${this.apiUrl}/breed/${breed}/images/random`)
         .then(resp => resp.json())
-            .then(data => data.message);
+        .then(data => data.message);
     }
 
     init() {
@@ -92,7 +92,6 @@ class Dogo {
                 this.scrollbox.classList.remove('breeds__scrollbox--show');
             }
         })
-
     }
 
     showAllBreeds() {
@@ -114,3 +113,8 @@ class Dogo {
 document.addEventListener('DOMContentLoaded', () => {
     new Dogo();
 });
+
+document.getElementById('dogoImg').addEventListener('error', noPhoto);
+function noPhoto() {
+    document.querySelector('.current-dog__image').innerHTML= "The image could not be loaded.";
+}

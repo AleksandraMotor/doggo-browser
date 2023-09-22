@@ -1,5 +1,4 @@
 const path = require('path');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const CopyPlugin = require('copy-webpack-plugin');
@@ -11,14 +10,10 @@ module.exports = {
     },
     output: {
         filename: 'js/[name]-[contenthash:6].js',
-        path: path.resolve(__dirname, '../', 'build')
+        path: path.resolve(__dirname, '../')
     },
     module: {
         rules: [
-            // {
-            //     test: /\.txt$/,
-            //     use: 'raw-loader'
-            // },
             {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
@@ -64,21 +59,12 @@ module.exports = {
         ]
     },
     plugins: [
-        // new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
             title: "nowa aplikacja",
             template: "src/templates/template.html"
         }),
         new MiniCssExtractPlugin({
             filename: '[name]-[contenthash:6].css'
-        }),
-        // new CopyPlugin({
-        //     patterns:[
-        //         {
-        //             from: 'public123/img',
-        //             to: 'img'
-        //         }  
-        //     ]
-        // })
+        })
     ]
 }
