@@ -1,35 +1,24 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     mode: 'production',
-    entry: {
-        main: './src/js/app.js',
-    },
+    entry:  './src/js/app.js',
     output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, '../')
+        path: path.resolve(__dirname, '../'),
+        filename: '[name].js'
     },
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
-            },
-            {
-                test: /\.(sass|scss)$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(jpg|jpeg|png|svg|gif)$/,
                 use: [
                     {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'img',
-                        }
+                        loader: 'file-loader'
                     },
                     {
                         loader: 'image-webpack-loader',
@@ -40,7 +29,6 @@ module.exports = {
                     }
                 ],
                 dependency: { not: ['url']},
-                
             },
             {
                 test: /\.js$/,
@@ -59,11 +47,7 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            title: "Best Doggo Browser",
             template: "src/templates/template.html"
-        }),
-        new MiniCssExtractPlugin({
-            filename: '[name].css'
         })
     ]
-}
+};

@@ -10,36 +10,35 @@ class Dogo {
         this.showList = document.querySelector('.breeds__selector');
         this.scrollbox = document.querySelector('.breeds__scrollbox');
         this.init();
-    }
+    };
 
     getBreedsList() {
         return fetch(`${this.apiUrl}/breeds/list/all`)
             .then(resp => resp.json())
             .then(data => data.message);
-    }
+    };
 
     getRandomImage() {
         return fetch(`${this.apiUrl}/breeds/image/random`)
             .then(resp => resp.json())
             .then(data => data.message);
-    }
+    };
 
     getRandomImageByBreed(breed) {
         return fetch(`${this.apiUrl}/breed/${breed}/images/random`)
         .then(resp => resp.json())
         .then(data => data.message);
-    }
+    };
 
     init() {
         this.getRandomImage()
             .then(img => this.showImageWhenReady(img));
-
         this.showAllBreeds();
-    }
+    };
 
     showImageWhenReady(image) {
         this.displayImg.setAttribute('src', image);
-    }
+    };
 
     addBread(breed, subBreed) {
         let name;
@@ -84,15 +83,15 @@ class Dogo {
         this.showList.addEventListener('click', () => {
             this.showList.classList.toggle('breeds__selector--show');
             this.scrollbox.classList.toggle('breeds__scrollbox--show');
-        })
+        });
 
         document.addEventListener('click', (event) => {
             if (event.target.id !== 'show') {
                 this.showList.classList.remove('breeds__selector--show');
                 this.scrollbox.classList.remove('breeds__scrollbox--show');
             }
-        })
-    }
+        });
+    };
 
     showAllBreeds() {
         this.getBreedsList()
@@ -107,14 +106,9 @@ class Dogo {
                     }
                 }
         });            
-    }
-}
+    };
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-    new Dogo();
+    new Dogo();    
 });
-
-document.getElementById('dogoImg').addEventListener('error', noPhoto);
-function noPhoto() {
-    document.querySelector('.current-dog__image').innerHTML= "The image could not be loaded.";
-}
