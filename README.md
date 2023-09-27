@@ -12,15 +12,32 @@ Go to [Doggo Browser](https://aleksandramotor.github.io/doggo-browser/) and sele
 Your favorite breeds will stay next to the display for more convenient switching.
 Cute doggos available on every device!
 
-## Build with
+## Technologies
 
+Technologies used in the project:
 
+* JavaScript
+* Sass
+* Webpack
+* Babel
+* REST API
 
-## Installation
+## Setup
 
 To run this project install it locally using npm:
 ```
-$ cd ../doggo-browser
+$ cd ./doggo-browser
 $ npm install
 $ npm start
+```
+For development mode run
+
+```
+$ npm run build
+```
+
+For production mode run
+
+```
+$ npm run prod
 ```
