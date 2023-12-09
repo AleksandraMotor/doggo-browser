@@ -59,7 +59,8 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
-            template: "src/templates/template.html"
+            template: "src/templates/template.html",
+            favicon: "public/img/paw-white.png"
         })
     ]
 };
