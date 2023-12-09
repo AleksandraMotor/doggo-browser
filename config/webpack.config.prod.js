@@ -47,7 +47,8 @@ module.exports = {
     },
     plugins: [
         new HTMLWebpackPlugin({
-            template: "src/templates/template.html"
+            template: "src/templates/template.html",
+            favicon: "public/img/paw-white.png"
         })
     ]
 };
